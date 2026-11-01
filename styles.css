@@ -17,8 +17,8 @@
   overflow: hidden;
   pointer-events: none;
 }
-.mathjax-command-preview mjx-container {
-  margin: 0 !important;
+.mathjax-command-row .mathjax-command-preview > [jax] {
+  margin: 0;
 }
 
 .mathjax-command-preview.suggestion-note {

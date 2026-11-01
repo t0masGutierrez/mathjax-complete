@@ -86,7 +86,7 @@ export function discoverCommands(runtime: MathRuntime): CommandEntry[] {
     }
     const info = preparePreview(name, preview);
     if (!valid(info.preview)) continue;
-    if (!info.previewLabel && !hasVisibleSample(runtime.tex2mml!(info.preview))) info.previewLabel = 'Layout effect';
+    if (!info.previewLabel && !hasVisibleSample(runtime.tex2mml(info.preview))) info.previewLabel = 'Layout effect';
     const first = insert.indexOf('{}');
     entries.push({name,insert,...info,cursor:name==='left'?6:first>=0?first+1:insert.length});
   }
