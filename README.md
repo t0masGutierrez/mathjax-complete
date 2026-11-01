@@ -55,7 +55,3 @@ npm run check:release
 MathJax is used as a test dependency. The installed plugin uses the MathJax system supplied by Obsidian.
 
 To report a problem, [open an issue](https://github.com/t0masGutierrez/mathjax-complete/issues) with your Obsidian version, an example of the problem, and the result you expected.
-
-## License
-
-[MIT](LICENSE).

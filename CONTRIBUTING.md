@@ -2,7 +2,7 @@
 
 Open an issue before making a large change. Include a small example and the result you expect.
 
-## Checks
+## Tests
 
 Use Node.js 24 or later.
 
