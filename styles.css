@@ -1,0 +1,31 @@
+/* Keep the native suggestion menu, selection, spacing, colors, and theme. */
+.mathjax-command-row {
+  display: flex;
+  align-items: center;
+  gap: var(--size-4-4);
+}
+.mathjax-command-name {
+  font-family: var(--font-monospace);
+  flex-shrink: 0;
+}
+.mathjax-command-preview {
+  margin-inline-start: auto;
+  text-align: right;
+  min-width: 2em;
+  max-width: 55%;
+  min-height: 1.5em;
+  overflow: hidden;
+  pointer-events: none;
+}
+.mathjax-command-preview mjx-container {
+  margin: 0 !important;
+}
+
+.mathjax-command-preview.suggestion-note {
+  white-space: nowrap;
+  overflow-wrap: normal;
+  min-width: 0;
+  text-overflow: ellipsis;
+  font-size: var(--font-ui-smaller);
+  line-height: var(--line-height-tight);
+}

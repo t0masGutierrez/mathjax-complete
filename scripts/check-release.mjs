@@ -1,0 +1,13 @@
+import assert from 'node:assert/strict';
+import {readFile, access} from 'node:fs/promises';
+const load = async name => JSON.parse(await readFile(name, 'utf8'));
+const [manifest, pkg, versions] = await Promise.all(['manifest.json', 'package.json', 'versions.json'].map(load));
+assert.equal(manifest.id, 'mathjax-complete');
+assert.equal(manifest.name, 'MathJax Complete');
+assert.match(manifest.version, /^\d+\.\d+\.\d+$/);
+assert.equal(pkg.version, manifest.version);
+assert.equal(versions[manifest.version], manifest.minAppVersion);
+assert.ok(manifest.description.length <= 250 && manifest.description.endsWith('.'));
+if (process.env.RELEASE_TAG) assert.equal(process.env.RELEASE_TAG, manifest.version);
+await Promise.all(['main.js', 'manifest.json', 'styles.css', 'README.md', 'LICENSE'].map(name => access(name)));
+console.log(`Release ${manifest.version}: files and versions agree.`);
